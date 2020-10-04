@@ -1,0 +1,15 @@
+C:\Users\Prezi\source\repos\VersionControl3\week04\bin\Debug\week04.exe.config
+C:\Users\Prezi\source\repos\VersionControl3\week04\bin\Debug\week04.exe
+C:\Users\Prezi\source\repos\VersionControl3\week04\bin\Debug\week04.pdb
+C:\Users\Prezi\source\repos\VersionControl3\week04\bin\Debug\EntityFramework.dll
+C:\Users\Prezi\source\repos\VersionControl3\week04\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Prezi\source\repos\VersionControl3\week04\bin\Debug\EntityFramework.xml
+C:\Users\Prezi\source\repos\VersionControl3\week04\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.csprojAssemblyReference.cache
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.csproj.ResolveComReference.cache
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.Properties.Resources.resources
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.csproj.GenerateResource.cache
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.csproj.CoreCompileInputs.cache
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.csproj.CopyComplete
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.exe
+C:\Users\Prezi\source\repos\VersionControl3\week04\obj\Debug\week04.pdb
