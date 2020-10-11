@@ -16,7 +16,7 @@ namespace VAR
 
     public partial class Form1 : Form
     {
-		PortfolioEntities context = new PortfolioEntities();
+		PortfolioEntities1 context = new PortfolioEntities1();
 		List<Tick> Ticks;
 		List<PortfolioItem> Portfolio = new List<PortfolioItem>();
 
@@ -108,8 +108,8 @@ namespace VAR
 
 		}
 
-
-	}
+ 
+    }
 
 
 }

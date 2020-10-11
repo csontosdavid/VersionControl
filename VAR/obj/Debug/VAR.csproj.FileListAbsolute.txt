@@ -1,0 +1,15 @@
+C:\Users\Prezi\source\repos\VersionControl3\VAR\bin\Debug\VAR.exe.config
+C:\Users\Prezi\source\repos\VersionControl3\VAR\bin\Debug\VAR.exe
+C:\Users\Prezi\source\repos\VersionControl3\VAR\bin\Debug\VAR.pdb
+C:\Users\Prezi\source\repos\VersionControl3\VAR\bin\Debug\EntityFramework.dll
+C:\Users\Prezi\source\repos\VersionControl3\VAR\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Prezi\source\repos\VersionControl3\VAR\bin\Debug\EntityFramework.xml
+C:\Users\Prezi\source\repos\VersionControl3\VAR\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.csprojAssemblyReference.cache
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.Form1.resources
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.Properties.Resources.resources
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.csproj.GenerateResource.cache
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.csproj.CoreCompileInputs.cache
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.csproj.CopyComplete
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.exe
+C:\Users\Prezi\source\repos\VersionControl3\VAR\obj\Debug\VAR.pdb
