@@ -1,0 +1,10 @@
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\bin\Debug\webszolgaltatas.exe.config
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\bin\Debug\webszolgaltatas.exe
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\bin\Debug\webszolgaltatas.pdb
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\obj\Debug\webszolgaltatas.csprojAssemblyReference.cache
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\obj\Debug\webszolgaltatas.Form1.resources
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\obj\Debug\webszolgaltatas.Properties.Resources.resources
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\obj\Debug\webszolgaltatas.csproj.GenerateResource.cache
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\obj\Debug\webszolgaltatas.csproj.CoreCompileInputs.cache
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\obj\Debug\webszolgaltatas.exe
+C:\Users\Prezi\source\repos\VersionControl3\webszolgaltatas\obj\Debug\webszolgaltatas.pdb

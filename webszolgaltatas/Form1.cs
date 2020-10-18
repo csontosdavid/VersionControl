@@ -14,98 +14,125 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace webszolgaltatas
 {
-    
 
-    public partial class Form1 : Form
-    {
-        BindingList<RateData> Rates = new BindingList<RateData>();
 
-        public Form1()
-        {
-            InitializeComponent();
+	public partial class Form1 : Form
+	{
+		BindingList<RateData> Rates = new BindingList<RateData>();
+		BindingList<string> Currencies = new BindingList<string>();
 
-            dataGridView1.DataSource = Rates;
+		public Form1()
+		{
 
-            var mnbService = new MNBArfolyamServiceSoapClient();
+			InitializeComponent();
 
-        }
+			dataGridView1.DataSource = Rates;
+			comboBox1.DataSource = Currencies;
 
-        private void RefreshData()
-        {
-            Rates.Clear();
+			var mnbService = new MNBArfolyamServiceSoapClient();
+			var currRequest = new GetCurrenciesRequestBody();
+			var currResponse = mnbService.GetCurrencies(currRequest);
+			var currResult = currResponse.GetCurrenciesResult;
 
-            CallWebService();
-            CreateChart();
+			var xml = new XmlDocument();
+			xml.LoadXml(currResult);
 
-        }
+			foreach (XmlElement element in xml.DocumentElement)
+			{
 
-        private void CallWebService()
-        {
-            var mnbService = new MNBArfolyamServiceSoapClient();
+				Currencies.Add(currResult);
 
-            var request = new GetExchangeRatesRequestBody()
-            {
-                currencyNames = comboBox1.SelectedItem.ToString(),
-                startDate = dateTimePicker1.Value.ToString(),
-                endDate = dateTimePicker2.Value.ToString()
-            };
 
-            var response = mnbService.GetExchangeRates(request);
-            var result = response.GetExchangeRatesResult;
+			}
 
-            var xml = new XmlDocument();
-            xml.LoadXml(result);
+			RefreshData();
+		}
 
-            foreach (XmlElement element in xml.DocumentElement)
-            {
-                var rate = new RateData();
-                Rates.Add(rate);
+		private void RefreshData()
+		{
+			Rates.Clear();
 
-                rate.Date = DateTime.Parse(element.GetAttribute("date"));
+			CallWebService();
+			CreateChart();
 
-                var childElement = (XmlElement)element.ChildNodes[0];
-                rate.Currency = childElement.GetAttribute("curr");
 
-                var unit = decimal.Parse(childElement.GetAttribute("unit"));
-                var value = decimal.Parse(childElement.InnerText);
-                if (unit != 0)
-                    rate.Value = value / unit;
-            }
-        }
+		}
 
-        private void CreateChart()
-        {
-            chartRateData.DataSource = Rates;
+		private void CallWebService()
+		{
+			var mnbService = new MNBArfolyamServiceSoapClient();
 
-            var series = chartRateData.Series[0];
-            series.ChartType = SeriesChartType.Line;
-            series.XValueMember = "Date";
-            series.YValueMembers = "Value";
+			var request = new GetExchangeRatesRequestBody()
+			{
+				currencyNames = comboBox1.SelectedItem.ToString(),
+				startDate = dateTimePicker1.Value.ToString(),
+				endDate = dateTimePicker2.Value.ToString()
+			};
 
-            series.BorderWidth = 2;
+			var response = mnbService.GetExchangeRates(request);
+			var result = response.GetExchangeRatesResult;
 
-            var legend = chartRateData.Legends[0];
-            legend.Enabled = false;
+			var xml = new XmlDocument();
+			xml.LoadXml(result);
 
-            var chartArea = chartRateData.ChartAreas[0];
-            chartArea.AxisX.MajorGrid.Enabled = false;
-            chartArea.AxisY.MajorGrid.Enabled = false;
-            chartArea.AxisY.IsStartedFromZero = false;
-        }
+			foreach (XmlElement element in xml.DocumentElement)
+			{
+				var rate = new RateData();
+				Rates.Add(rate);
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            RefreshData();
-        }
+				rate.Date = DateTime.Parse(element.GetAttribute("date"));
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-            RefreshData();
-        }
+				var childElement = (XmlElement)element.ChildNodes[0];
+				if (childElement == null)
+					continue;
+				rate.Currency = childElement.GetAttribute("curr");
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RefreshData();
-        }
-    }
+
+
+				var unit = decimal.Parse(childElement.GetAttribute("unit"));
+				var value = decimal.Parse(childElement.InnerText);
+				if (unit != 0)
+				{
+					rate.Value = value / unit;
+				}
+			}
+		}
+
+
+
+		private void CreateChart()
+		{
+			chartRateData.DataSource = Rates;
+
+			var series = chartRateData.Series[0];
+			series.ChartType = SeriesChartType.Line;
+			series.XValueMember = "Date";
+			series.YValueMembers = "Value";
+
+			series.BorderWidth = 2;
+
+			var legend = chartRateData.Legends[0];
+			legend.Enabled = false;
+
+			var chartArea = chartRateData.ChartAreas[0];
+			chartArea.AxisX.MajorGrid.Enabled = false;
+			chartArea.AxisY.MajorGrid.Enabled = false;
+			chartArea.AxisY.IsStartedFromZero = false;
+		}
+
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+			RefreshData();
+		}
+
+		private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+		{
+			RefreshData();
+		}
+
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			RefreshData();
+		}
+	}
 }
